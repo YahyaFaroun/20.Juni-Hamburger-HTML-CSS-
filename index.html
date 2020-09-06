@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* Menu Aussehen */
+        body{
+            margin: 0;
+
+        }
+        header{
+            position: relative;
+            height: 100vh;
+            background-color:black;
+        }
+        nav{
+            height: 100vh;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gold;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            right: -60%;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-size: 3em;
+            margin-bottom: 50px;
+            transition: all 1s ease;
+        }
+        li a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+
+
+        /* checkbox */
+        input{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+            z-index: 12;
+        }
+        input:checked~ nav{
+            right: 0;
+        }
+
+
+
+        /* Hamburger Menu */
+        span:nth-of-type(2){   
+            top: 41px;
+        }
+        span:nth-of-type(3){
+         top: 62px;
+        }
+        
+        span{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: block;
+            width: 50px;
+            height: 8px;
+            background: tomato;
+            z-index: 11;
+            transition:all .5s ease
+        }
+        
+
+        
+        /* Spielerei mit den Hamburger */
+        input:checked~span:nth-of-type(1){
+            transform: rotate(45deg) translateY(15px) translateX(15px);
+        }
+        input:checked~span:nth-of-type(2){
+            display: none;
+        }
+        input:checked~span:nth-of-type(3){
+            transform: rotate(-45deg) translateY(-15px) translateX(14px);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <nav>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
